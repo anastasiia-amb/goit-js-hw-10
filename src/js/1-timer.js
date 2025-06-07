@@ -49,7 +49,7 @@ startBtn.addEventListener('click', () => {
   datetimePicker.disabled = true;
 
   timerId = setInterval(() => {
-    const dateNow = new Data();
+    const dateNow = new Date();
     const diffTime = userSelectedDate - dateNow;
 
     if (diffTime <= 0) {
@@ -58,8 +58,8 @@ startBtn.addEventListener('click', () => {
       return;
     }
     const time = convertMs(diffTime);
-    updateTimer(time);
-  }, 1500);
+    updateTimerUI(time);
+  }, 1000);
 });
 
 function updateTimerUI({ days, hours, minutes, seconds }) {
